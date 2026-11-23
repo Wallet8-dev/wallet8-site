@@ -6,7 +6,7 @@
   "tagline": "Open-Source Secure Post-Quantum-Safe Digital Wallet Platform That Heals and Scales Itself.",
   "heroEyebrow": "Open-Source Digital Wallet",
   "heroTitle": "Wallet8: Autonomous Quantum-Safe Digital Wallet",
-  "heroDescription": "The wallet role of the digital-credential stack, shipped as a first-class vertical. Wallet8 holds verifiable credentials in an encrypted vault, intakes issuers' Credential Offers, and presents the minimum claim set a verifier asked for - built section by section from OID4VCI 1.0, OID4VP 1.0, SD-JWT VC and ISO 18013-5/-7, so a bank, hotel or health wallet embeds the same hardened SDKs instead of rebuilding credential protocols from scratch.",
+  "heroDescription": "The wallet role of the credential stack. Scan an issuer's offer, hold the credential sealed, and present only the claims a verifier asked for - consent first, every time.",
   "accent": "#F8B64C",
   "pillarsLead": "Wallet8 inherits the Sentin8 security model by construction and adds the wallet role's own guarantees - sealed credentials, device-bound proofs, and consent on every presentation.",
   "pillars": [
