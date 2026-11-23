@@ -1,0 +1,105 @@
+{
+  "vertical": "wallet8",
+  "name": "Wallet8",
+  "org": "Wallet8-dev",
+  "domain": "wallet8.dev",
+  "tagline": "Open-Source Secure Post-Quantum-Safe Digital Wallet Platform That Heals and Scales Itself.",
+  "heroEyebrow": "Open-Source Digital Wallet",
+  "heroTitle": "Wallet8: Autonomous Quantum-Safe Digital Wallet",
+  "heroDescription": "The wallet role of the digital-credential stack, shipped as a first-class vertical. Wallet8 holds verifiable credentials in an encrypted vault, intakes issuers' Credential Offers, and presents the minimum claim set a verifier asked for - built section by section from OID4VCI 1.0, OID4VP 1.0, SD-JWT VC and ISO 18013-5/-7, so a bank, hotel or health wallet embeds the same hardened SDKs instead of rebuilding credential protocols from scratch.",
+  "accent": "#F8B64C",
+  "pillarsLead": "Wallet8 inherits the Sentin8 security model by construction and adds the wallet role's own guarantees - sealed credentials, device-bound proofs, and consent on every presentation.",
+  "pillars": [
+    {
+      "title": "Consent before data",
+      "summary": "No presentation leaves the wallet without an explicit consent step showing the exact claim set the verifier requested - never the whole credential."
+    },
+    {
+      "title": "Sealed credential vault",
+      "summary": "Every credential is stored as an AES-256-GCM envelope in the holder service: plaintext credentials never exist in an application table, only a sealed slot per user."
+    },
+    {
+      "title": "Device-bound proofs",
+      "summary": "One device key per wallet; issuance proofs and DPoP tokens are sender-constrained, so a stolen credential is inert without the private key."
+    },
+    {
+      "title": "Standards, not approximations",
+      "summary": "OID4VCI 1.0, OID4VP 1.0, DCQL selection, encrypted responses, the DC API and the Token Status List are implemented section by section from the normative text."
+    },
+    {
+      "title": "Revocation-aware",
+      "summary": "The status sync walks the Token Status List and the vault reflects it - a revoked credential stops presenting instead of failing at the verifier."
+    }
+  ],
+  "units": [
+    {
+      "slug": "holder",
+      "kind": "service",
+      "name": "Wallet8:Holder",
+      "repo": "wallet8-holder",
+      "org": "Wallet8-dev",
+      "summary": "The holder backend: the encrypted credential vault, device-key registration, the authorization-code orchestration (prepare/complete), the deferred poll, presentation resolve/deliver, presentation history, and the status sync.",
+      "scopes": [
+        "wallet8:holder:credentials:read",
+        "wallet8:holder:credentials:write",
+        "wallet8:holder:presentations:write"
+      ]
+    }
+  ],
+  "apps": [
+    {
+      "slug": "wallet",
+      "kind": "app",
+      "name": "Wallet8:Wallet",
+      "repo": "wallet8-wallet",
+      "org": "Wallet8-dev",
+      "summary": "The reference Flutter web wallet: the vault, the scan intake, the consent preview, the error screen, and the outcome landing - plus the W3C Digital Credentials API shim."
+    }
+  ],
+  "sdks": [
+    {
+      "slug": "sdk",
+      "kind": "sdk",
+      "name": "wallet8 Rust SDK",
+      "repo": "wallet8-sdk",
+      "org": "Wallet8-dev",
+      "summary": "The `wallet8` facade: the OID4VCI issuance client and the OID4VP presentation client (request verification, Client Identifier Prefixes, DCQL, vp_token assembly, encrypted responses, the DC API) plus the holder contracts.",
+      "href": "/docs/sdk/runtime"
+    },
+    {
+      "slug": "flutter",
+      "kind": "sdk",
+      "name": "wallet8 Flutter SDK",
+      "repo": "wallet8-flutter",
+      "org": "Wallet8-dev",
+      "summary": "The Flutter wallet SDK: the credential store, the OID4VCI/OID4VP drivers (session-based consent flow, deferred polling, the authorize round), and the status sync - what a vertical's branded wallet embeds.",
+      "href": "/docs/sdk/flutter"
+    }
+  ],
+  "showcaseTitle": "The Sentin8 family",
+  "showcaseLead": "Wallet8 contains no platform infrastructure of its own - identity, events, storage, secrets, and supervision come from the platform services, and the issuer/verifier roles stay in Sentin8:Auth.",
+  "showcase": [
+    {
+      "slug": "sentin8",
+      "name": "Sentin8 - the platform",
+      "chip": "sentin8.dev",
+      "accent": "#D4AF37",
+      "summary": "18 services: identity, credentials, events, storage, secrets, trust - everything Wallet8 doesn't rebuild.",
+      "href": "https://sentin8.dev/"
+    },
+    {
+      "slug": "bank8",
+      "name": "Bank8",
+      "chip": "bank8.dev",
+      "accent": "#1B6CA8",
+      "summary": "Embeds the wallet8 SDKs for its branded identity wallet (the Bank8 Wallet).",
+      "href": "https://bank8.dev/"
+    }
+  ],
+  "crossrefs": [
+    {
+      "label": "The issuer and verifier roles live in Sentin8:Auth",
+      "url": "https://sentin8.dev/docs/services/auth/"
+    }
+  ]
+}

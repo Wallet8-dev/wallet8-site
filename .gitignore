@@ -1,4 +1,6 @@
-/node_modules
-/test-results
-/playwright-report
-/build
+node_modules/
+.docusaurus/
+build/
+docs/reference/
+docs/api/
+.tmp/
